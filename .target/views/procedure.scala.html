@@ -1,4 +1,4 @@
-@(procedures: List[Procedure], procedureForm: Form[Procedure])
+@(procedures: List[entities.Procedure], procedureForm: Form[entities.Procedure])
 
 @import helper._
 
@@ -18,9 +18,7 @@
 			<form action="@routes.Procedures.deleteProcedure(procedure.getId())">
             	<input type="submit" value="Deletar">
             </form>
-            <form action="@routes.Procedures.editProcedure(procedure.getId())">
-            	<input type="submit" value="Editar">
-            </form>
+            
 			<p>------------------------------------------</p>
 		}
 	

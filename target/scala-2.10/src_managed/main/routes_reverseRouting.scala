@@ -1,6 +1,6 @@
 // @SOURCE:C:/desenvolvimento/vetSoft/conf/routes
-// @HASH:95c1dceb06f5d6537c6b7711010f1f6f8632c419
-// @DATE:Tue Jan 07 22:15:16 GMT-03:00 2014
+// @HASH:e1080f274019bb1de9207b227c90a4875ccbfd17
+// @DATE:Wed Jan 08 14:45:44 GMT-03:00 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -14,37 +14,21 @@ import Router.queryString
 
 
 // @LINE:17
-// @LINE:14
 // @LINE:12
 // @LINE:11
-// @LINE:9
 // @LINE:7
 // @LINE:6
 package controllers {
 
-// @LINE:14
 // @LINE:12
 // @LINE:11
-// @LINE:9
 // @LINE:7
 class ReverseProcedures {
     
 
-// @LINE:11
-def addProcedure(): Call = {
-   Call("POST", _prefix + { _defaultPrefix } + "procedimento")
-}
-                                                
-
 // @LINE:7
 def procedures(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "procedimento")
-}
-                                                
-
-// @LINE:9
-def editProcedure(id:Long): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "procedimento/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
@@ -54,9 +38,9 @@ def deleteProcedure(id:Long): Call = {
 }
                                                 
 
-// @LINE:14
-def updateProcedure(id:Long): Call = {
-   Call("POST", _prefix + { _defaultPrefix } + "procedimento/" + implicitly[PathBindable[Long]].unbind("id", id))
+// @LINE:11
+def addProcedure(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "procedimento")
 }
                                                 
     
@@ -93,32 +77,17 @@ def index(): Call = {
 
 
 // @LINE:17
-// @LINE:14
 // @LINE:12
 // @LINE:11
-// @LINE:9
 // @LINE:7
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:14
 // @LINE:12
 // @LINE:11
-// @LINE:9
 // @LINE:7
 class ReverseProcedures {
     
-
-// @LINE:11
-def addProcedure : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Procedures.addProcedure",
-   """
-      function() {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "procedimento"})
-      }
-   """
-)
-                        
 
 // @LINE:7
 def procedures : JavascriptReverseRoute = JavascriptReverseRoute(
@@ -126,17 +95,6 @@ def procedures : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function() {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "procedimento"})
-      }
-   """
-)
-                        
-
-// @LINE:9
-def editProcedure : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Procedures.editProcedure",
-   """
-      function(id) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "procedimento/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
       }
    """
 )
@@ -153,12 +111,12 @@ def deleteProcedure : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:14
-def updateProcedure : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Procedures.updateProcedure",
+// @LINE:11
+def addProcedure : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Procedures.addProcedure",
    """
-      function(id) {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "procedimento/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "procedimento"})
       }
    """
 )
@@ -207,38 +165,22 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 
 
 // @LINE:17
-// @LINE:14
 // @LINE:12
 // @LINE:11
-// @LINE:9
 // @LINE:7
 // @LINE:6
 package controllers.ref {
 
 
-// @LINE:14
 // @LINE:12
 // @LINE:11
-// @LINE:9
 // @LINE:7
 class ReverseProcedures {
     
 
-// @LINE:11
-def addProcedure(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Procedures.addProcedure(), HandlerDef(this, "controllers.Procedures", "addProcedure", Seq(), "POST", """""", _prefix + """procedimento""")
-)
-                      
-
 // @LINE:7
 def procedures(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Procedures.procedures(), HandlerDef(this, "controllers.Procedures", "procedures", Seq(), "GET", """""", _prefix + """procedimento""")
-)
-                      
-
-// @LINE:9
-def editProcedure(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Procedures.editProcedure(id), HandlerDef(this, "controllers.Procedures", "editProcedure", Seq(classOf[Long]), "GET", """ GET		/procedimento				controllers.Procedures.getProcedureById(id: Long)""", _prefix + """procedimento/$id<[^/]+>""")
 )
                       
 
@@ -248,9 +190,9 @@ def deleteProcedure(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.Hand
 )
                       
 
-// @LINE:14
-def updateProcedure(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Procedures.updateProcedure(id), HandlerDef(this, "controllers.Procedures", "updateProcedure", Seq(classOf[Long]), "POST", """""", _prefix + """procedimento/$id<[^/]+>""")
+// @LINE:11
+def addProcedure(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Procedures.addProcedure(), HandlerDef(this, "controllers.Procedures", "addProcedure", Seq(), "POST", """""", _prefix + """procedimento""")
 )
                       
     

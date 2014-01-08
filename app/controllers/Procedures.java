@@ -3,69 +3,64 @@ package controllers;
 
 import java.util.List;
 
-import models.Procedure;
+import models.VetSofFacade;
+import models.entitie.Procedure;
 import play.data.*;
 import static play.data.Form.*;
-import play.db.ebean.Model;
-import play.libs.Json;
-import play.mvc.Controller;
-import play.mvc.Result;
+import play.mvc.*;
 
-import views.html.*;
 
 public class Procedures extends Controller {
 
 	final static Form<Procedure> procedureForm = form(Procedure.class);
 	
+	static VetSofFacade facade = VetSofFacade.getInstance();
+	
+	
 	public static Result procedures() {
-		return ok(
-				views.html.procedure.render(Procedure.all(), procedureForm)
-		);
+		return ok(views.html.procedure.render(facade.allProcedures(), procedureForm));
 	}
 	
-//	public static Result getProcedureById(Long id) {
-//		Procedure procedure = new Model.Finder<>(Long.class, Procedure.class).byId(id);
-//		return ok(Json.toJson(procedure));
-//	}
 
 	public static Result addProcedure() {
     	Form<Procedure> filledForm = procedureForm.bindFromRequest();
     	  if(filledForm.hasErrors()) {
     	    return badRequest(
-    	      views.html.procedure.render(Procedure.all(), filledForm)
+    	      views.html.procedure.render(facade.allProcedures(), filledForm)
     	    );
     	  } else {
-    	    Procedure.create(filledForm.get());
+    		facade.createProcedure(filledForm.get());
     	    return redirect(routes.Procedures.procedures());  
     	  }
     	
     }
     
     public static Result deleteProcedure(Long id) {
-    	Procedure.delete(id);
+    	facade.removeProcedure(id);
     	return redirect(routes.Procedures.procedures());
     }
     
-    public static Result editProcedure(Long id) {
-//    	Thing thing = Thing.find.where().idEq(id).findUnique();
-//        Form<Thing> editForm = thingForm.fill(thing);
-    	
-//        return ok(views.html.thingEdit.render(thing, editForm));
-    	Form<Procedure> editForm = procedureForm.fill(Procedure.getProcedureById(id));
-        
-        return ok(views.html.update.render(editForm));
-        
-        
-    }
-    public static Result updateProcedure(Long id) {
-    	Form<Procedure> filledForm = procedureForm.bindFromRequest();
-        if (filledForm.hasErrors()) {
-//          Procedure procedure = Procedure.getProcedureById(id);
-          return badRequest(views.html.procedure.render(Procedure.all(), filledForm));
-        } else {
-          Procedure procedure = filledForm.get();
-          Procedure.update(id, procedure);
-          return redirect(routes.Procedures.procedures());
-        }
-    }
+//    public static Result editProcedure(Long id) {
+////    	Thing thing = Thing.find.where().idEq(id).findUnique();
+////        Form<Thing> editForm = thingForm.fill(thing);
+//    	
+////        return ok(views.html.thingEdit.render(thing, editForm));
+//    	
+////    	Form<Procedure> editForm = procedureForm.fill(Procedure.getProcedureById(id));
+////        
+////        return ok(views.html.update.render(editForm));
+//    	return TODO;
+//    }
+    
+//    public static Result updateProcedure(Long id) {
+//    	Form<Procedure> filledForm = procedureForm.bindFromRequest();
+//        if (filledForm.hasErrors()) {
+////          Procedure procedure = Procedure.getProcedureById(id);
+//          return badRequest(views.html.procedure.render(Procedure.all(), filledForm));
+//        } else {
+//          Procedure procedure = filledForm.get();
+//          Procedure.update(id, procedure);
+//          return redirect(routes.Procedures.procedures());
+//        }
+//    }
 }

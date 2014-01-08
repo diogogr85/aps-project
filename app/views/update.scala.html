@@ -1,4 +1,4 @@
-@(updateForm: Form[Procedure])
+@(updateForm: Form[entitie.Procedure])
 
 @import helper._
 
@@ -6,7 +6,7 @@
 
 	<h3>Editer o procedimento</h3>
 
-	<form action="@routes.Procedures.updateProcedure(updateForm.get().getId())" method="post">
+	<form method="post">
     	Tipo do procedimento: <input name="procedureType"> </br>
     	Descrição: <input name="description"> </br>
     	Responsável: <input name="doctor"> </br>

@@ -20,14 +20,14 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object procedure extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[List[Procedure],Form[Procedure],play.api.templates.HtmlFormat.Appendable] {
+object procedure extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[List[entitie.Procedure],Form[entitie.Procedure],play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(procedures: List[Procedure], procedureForm: Form[Procedure]):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(procedures: List[entitie.Procedure], procedureForm: Form[entitie.Procedure]):play.api.templates.HtmlFormat.Appendable = {
         _display_ {import helper._
 
 
-Seq[Any](format.raw/*1.63*/("""
+Seq[Any](format.raw/*1.79*/("""
 
 """),format.raw/*4.1*/("""
 """),_display_(Seq[Any](/*5.2*/main("CRUD Actions")/*5.22*/ {_display_(Seq[Any](format.raw/*5.24*/("""
@@ -46,18 +46,16 @@ Seq[Any](format.raw/*1.63*/("""
 			<form action=""""),_display_(Seq[Any](/*18.19*/routes/*18.25*/.Procedures.deleteProcedure(procedure.getId()))),format.raw/*18.71*/("""">
             	<input type="submit" value="Deletar">
             </form>
-            <form action=""""),_display_(Seq[Any](/*21.28*/routes/*21.34*/.Procedures.editProcedure(procedure.getId()))),format.raw/*21.78*/("""">
-            	<input type="submit" value="Editar">
-            </form>
+            
 			<p>------------------------------------------</p>
-		""")))})),format.raw/*25.4*/("""
+		""")))})),format.raw/*23.4*/("""
 	
 	
 	</br></br>
 	
 	<h3>Cadastre um novo procedimento</h3>
 
-	<form action=""""),_display_(Seq[Any](/*32.17*/routes/*32.23*/.Procedures.addProcedure())),format.raw/*32.49*/("""" method="post">
+	<form action=""""),_display_(Seq[Any](/*30.17*/routes/*30.23*/.Procedures.addProcedure())),format.raw/*30.49*/("""" method="post">
     	Tipo do procedimento: <input name="procedureType"> </br>
     	Descrição: <input name="description"> </br>
     	Responsável: <input name="doctor"> </br>
@@ -70,20 +68,20 @@ Seq[Any](format.raw/*1.63*/("""
 """)))})))}
     }
     
-    def render(procedures:List[Procedure],procedureForm:Form[Procedure]): play.api.templates.HtmlFormat.Appendable = apply(procedures,procedureForm)
+    def render(procedures:List[entitie.Procedure],procedureForm:Form[entitie.Procedure]): play.api.templates.HtmlFormat.Appendable = apply(procedures,procedureForm)
     
-    def f:((List[Procedure],Form[Procedure]) => play.api.templates.HtmlFormat.Appendable) = (procedures,procedureForm) => apply(procedures,procedureForm)
+    def f:((List[entitie.Procedure],Form[entitie.Procedure]) => play.api.templates.HtmlFormat.Appendable) = (procedures,procedureForm) => apply(procedures,procedureForm)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jan 08 12:19:14 GMT-03:00 2014
+                    DATE: Wed Jan 08 20:40:35 GMT-03:00 2014
                     SOURCE: C:/desenvolvimento/vetSoft/app/views/procedure.scala.html
-                    HASH: 6029f2ff2d3140efada55d19c3d5cfbff115ec08
-                    MATRIX: 803->1|975->62|1005->84|1042->87|1070->107|1109->109|1182->147|1226->175|1266->177|1339->214|1357->223|1387->231|1441->249|1459->258|1500->277|1561->302|1579->311|1613->323|1671->345|1689->354|1725->368|1781->388|1799->397|1833->409|1905->445|1920->451|1988->497|2128->601|2143->607|2209->651|2373->784|2492->867|2507->873|2555->899
-                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|46->18|46->18|46->18|49->21|49->21|49->21|53->25|60->32|60->32|60->32
+                    HASH: 4edef1090bc766076df1c0fbb3c8ac58ea4f6419
+                    MATRIX: 819->1|1007->78|1037->100|1074->103|1102->123|1141->125|1214->163|1258->191|1298->193|1371->230|1389->239|1419->247|1473->265|1491->274|1532->293|1593->318|1611->327|1645->339|1703->361|1721->370|1757->384|1813->404|1831->413|1865->425|1937->461|1952->467|2020->513|2199->661|2318->744|2333->750|2381->776
+                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|41->13|41->13|41->13|42->14|42->14|42->14|43->15|43->15|43->15|46->18|46->18|46->18|51->23|58->30|58->30|58->30
                     -- GENERATED --
                 */
             
