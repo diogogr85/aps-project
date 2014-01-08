@@ -1,0 +1,18 @@
+@(updateForm: Form[Procedure])
+
+import helper._
+
+@main("Editar procedimento") {
+
+	<h3>Editer o procedimento</h3>
+
+	<form action="@routes.Procedures.updateProcedure(updateForm.getId())" method="post">
+    	Tipo do procedimento: <input name="procedureType"> </br>
+    	Descrição: <input name="description"> </br>
+    	Responsável: <input name="doctor"> </br>
+    	Auxiliar: <input name="auxiliar"> </br>
+    	Animal: <input name="animal"> </br>
+    	<input type="submit" value="Cadastrar">
+
+    </form>
+}

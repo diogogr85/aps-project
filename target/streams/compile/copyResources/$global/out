@@ -1,0 +1,6 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\desenvolvimento\vetSoft\conf\application.conf,C:\desenvolvimento\vetSoft\target\scala-2.10\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\desenvolvimento\vetSoft\conf\evolutions,C:\desenvolvimento\vetSoft\target\scala-2.10\classes\evolutions)[0m
+[0m[[0mdebug[0m] [0m	(C:\desenvolvimento\vetSoft\conf\routes,C:\desenvolvimento\vetSoft\target\scala-2.10\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(C:\desenvolvimento\vetSoft\conf\evolutions\default,C:\desenvolvimento\vetSoft\target\scala-2.10\classes\evolutions\default)[0m
+[0m[[0mdebug[0m] [0m	(C:\desenvolvimento\vetSoft\conf\evolutions\default\1.sql,C:\desenvolvimento\vetSoft\target\scala-2.10\classes\evolutions\default\1.sql)[0m

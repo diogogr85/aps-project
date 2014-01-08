@@ -1,0 +1,42 @@
+@(procedures: List[Procedure], procedureForm: Form[Procedure])
+
+@import helper._
+
+@main("CRUD Actions") {
+
+	<h3>Procedimentos</h3>
+	
+	
+		@for(procedure <- procedures) {
+			Identificação do Procedimento: @procedure.getId() </br>
+			Tipo: @procedure.getProcedureType() </br>
+			Responsável: @procedure.getDoctor() </br>
+			Auxiliar: @procedure.getAuxiliar() </br>
+			Animal: @procedure.getAnimal() </br>
+			
+			
+			<form action="@routes.Procedures.deleteProcedure(procedure.getId())">
+            	<input type="submit" value="Deletar">
+            </form>
+            <form action="@routes.Procedures.editProcedure(procedure.getId())">
+            	<input type="submit" value="Editar">
+            </form>
+			<p>------------------------------------------</p>
+		}
+	
+	
+	</br></br>
+	
+	<h3>Cadastre um novo procedimento</h3>
+
+	<form action="@routes.Procedures.addProcedure()" method="post">
+    	Tipo do procedimento: <input name="procedureType" value="procedureForm.getProcedureType()"> </br>
+    	Descrição: <input name="description"> </br>
+    	Responsável: <input name="doctor" value="procedureForm.getDoctor()"> </br>
+    	Auxiliar: <input name="auxiliar"> </br>
+    	Animal: <input name="animal"> </br>
+    	<input type="submit" value="Cadastrar">
+
+    </form>
+
+}
