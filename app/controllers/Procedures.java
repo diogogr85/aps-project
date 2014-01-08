@@ -53,9 +53,7 @@ public class Procedures extends Controller {
 //        return ok(views.html.thingEdit.render(thing, editForm));
     	Form<Procedure> editForm = procedureForm.fill(Procedure.getProcedureById(id));
         
-        return ok(
-				views.html.procedure.render(Procedure.all(), editForm)
-		);
+        return ok(views.html.update.render(editForm));
         
         
     }

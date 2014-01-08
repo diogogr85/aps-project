@@ -15,7 +15,7 @@ import play.db.ebean.Model;
 public class Procedure extends Model {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private long id;
 	
 	private String procedureType;
@@ -100,8 +100,8 @@ public class Procedure extends Model {
 	}
 	
 	public static Procedure getProcedureById(Long id) {
-		Procedure actual =  find.where().idEq(id).findUnique();
-	return actual;
+//		Procedure actual =  find.where().idEq(id).findUnique();
+	return find.ref(id);
 	}
 	
 	public static void update(Long id, Procedure procedure) {
