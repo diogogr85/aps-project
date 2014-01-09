@@ -3,14 +3,15 @@ package models.controllers;
 import java.util.List;
 
 import models.entity.Employee;
+import models.factory.Factory;
 import models.registers.EmployeeRegister;
 
 public class EmployeeController {
 
 	private EmployeeRegister employeeRegister;
 	
-	public EmployeeController() {
-		this.employeeRegister = new EmployeeRegister();
+	public EmployeeController(Factory factory) {
+		this.employeeRegister = new EmployeeRegister(factory);
 	}
 	
 	public void create(Employee employee) {

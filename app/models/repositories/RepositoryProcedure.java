@@ -7,7 +7,7 @@ import models.entity.Procedure;
 
 import play.db.ebean.Model;
 
-public class RepositoryProcedure extends Model implements IRepositoryProcedure {
+public class RepositoryProcedure extends Model implements IRepositoryProcedure<Procedure> {
 	
 	
 	public static Finder<Long, Procedure> find = new Finder(Long.class, Procedure.class);

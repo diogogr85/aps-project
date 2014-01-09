@@ -3,15 +3,15 @@ package models.registers;
 import java.util.List;
 
 import models.entity.Animal;
+import models.factory.Factory;
 import models.repositories.IRepositoryAnimal;
-import models.repositories.RepositoryAnimal;
 
-public class AnimalRegister implements IRepositoryAnimal{
+public class AnimalRegister implements IRepositoryAnimal<Animal>{
 
-	private IRepositoryAnimal repositoryAnimal;
+	private IRepositoryAnimal<Animal> repositoryAnimal;
 	
-	public AnimalRegister() {
-		repositoryAnimal = new RepositoryAnimal();
+	public AnimalRegister(Factory factory) {
+		repositoryAnimal = factory.createRepositoryAnimal();
 	}
 	
 	@Override

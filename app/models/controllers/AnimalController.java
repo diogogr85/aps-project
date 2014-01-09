@@ -3,15 +3,17 @@ package models.controllers;
 import java.util.List;
 
 import models.entity.Animal;
+import models.factory.Factory;
 import models.registers.AnimalRegister;
 import models.registers.ProcedureRegister;
+import models.registers.RegisterQuestion;
 
 public class AnimalController {
 	
 	private AnimalRegister animalRegister;
 	
-	public AnimalController() {
-		this.animalRegister = new AnimalRegister();
+	public AnimalController(Factory factory) {
+		this.animalRegister = new AnimalRegister(factory);
 	}
 	
 	public void create(Animal animal) {

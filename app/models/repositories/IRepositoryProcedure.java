@@ -4,7 +4,7 @@ import java.util.List;
 
 import models.entity.Procedure;
 
-public interface IRepositoryProcedure {
+public interface IRepositoryProcedure<Procedure> {
 
 	public void create(Procedure procedure);
 	public void remove(Long id);

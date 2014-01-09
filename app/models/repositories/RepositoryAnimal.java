@@ -6,7 +6,7 @@ import play.db.ebean.Model.Finder;
 
 import models.entity.Animal;
 
-public class RepositoryAnimal implements IRepositoryAnimal {
+public class RepositoryAnimal implements IRepositoryAnimal<Animal> {
 
 	public static Finder<Long, Animal> find = new Finder(Long.class, Animal.class);
 

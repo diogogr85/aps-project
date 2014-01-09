@@ -3,14 +3,15 @@ package models.controllers;
 import java.util.List;
 
 import models.entity.Procedure;
+import models.factory.Factory;
 import models.registers.ProcedureRegister;
 
 public class ProcedureController {
 
 	private ProcedureRegister procedureRegister;
 	
-	public ProcedureController() {
-		this.procedureRegister = new ProcedureRegister();
+	public ProcedureController(Factory factory) {
+		this.procedureRegister = new ProcedureRegister(factory);
 	}
 	
 	public void create(Procedure procedure) {

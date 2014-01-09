@@ -8,17 +8,23 @@ import models.controllers.ProcedureController;
 import models.entity.Animal;
 import models.entity.Employee;
 import models.entity.Procedure;
+import models.factory.Factory;
+import models.factory.FactoryBD;
 
 public class VetSofFacade {
 
 	private ProcedureController procedureControl;
 	private AnimalController animalControl;
 	private EmployeeController employeeControl;
-
+	private Factory factory;
+	
 	private static VetSofFacade instance;
 	
 	public VetSofFacade() {
-		procedureControl = new ProcedureController();
+		factory = new FactoryBD();
+		procedureControl = new ProcedureController(factory);
+		animalControl = new AnimalController(factory);
+		employeeControl = new EmployeeController(factory);
 	}
 	
 	public static VetSofFacade getInstance() {

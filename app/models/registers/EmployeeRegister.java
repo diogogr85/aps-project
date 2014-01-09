@@ -3,15 +3,16 @@ package models.registers;
 import java.util.List;
 
 import models.entity.Employee;
+import models.factory.Factory;
 import models.repositories.IRepositoryEmployee;
 import models.repositories.RepositoryEmployee;
 
-public class EmployeeRegister implements IRepositoryEmployee {
+public class EmployeeRegister implements IRepositoryEmployee<Employee> {
 
-private IRepositoryEmployee repositoryEmployee;
+private IRepositoryEmployee<Employee> repositoryEmployee;
 	
-	public EmployeeRegister() {
-		repositoryEmployee = new RepositoryEmployee();
+	public EmployeeRegister(Factory factory) {
+		repositoryEmployee = factory.createRepositoryEmployee();
 	}
 	
 	@Override

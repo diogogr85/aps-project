@@ -3,15 +3,16 @@ package models.registers;
 import java.util.List;
 
 import models.entity.Procedure;
+import models.factory.Factory;
 import models.repositories.IRepositoryProcedure;
 import models.repositories.RepositoryProcedure;
 
-public class ProcedureRegister implements IRepositoryProcedure {
+public class ProcedureRegister implements IRepositoryProcedure<Procedure> {
 
-	private IRepositoryProcedure repositoryProcedure;
+	private IRepositoryProcedure<Procedure> repositoryProcedure;
 	
-	public ProcedureRegister() {
-		repositoryProcedure = new RepositoryProcedure();
+	public ProcedureRegister(Factory factory) {
+		repositoryProcedure = factory.createRepositoryProcedure();
 	}
 	
 	@Override

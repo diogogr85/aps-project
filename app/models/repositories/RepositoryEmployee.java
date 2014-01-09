@@ -7,7 +7,7 @@ import play.db.ebean.Model.Finder;
 import models.entity.Animal;
 import models.entity.Employee;
 
-public class RepositoryEmployee implements IRepositoryEmployee {
+public class RepositoryEmployee implements IRepositoryEmployee<Employee> {
 
 	public static Finder<Long, Employee> find = new Finder(Long.class, Employee.class);
 	
