@@ -2,7 +2,7 @@ package models.repositories;
 
 import java.util.List;
 
-import models.entitie.Procedure;
+import models.entity.Procedure;
 
 
 import play.db.ebean.Model;

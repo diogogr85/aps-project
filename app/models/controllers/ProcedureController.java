@@ -2,7 +2,7 @@ package models.controllers;
 
 import java.util.List;
 
-import models.entitie.Procedure;
+import models.entity.Procedure;
 import models.registers.ProcedureRegister;
 
 public class ProcedureController {

@@ -4,7 +4,7 @@ package controllers;
 import java.util.List;
 
 import models.VetSofFacade;
-import models.entitie.Procedure;
+import models.entity.Procedure;
 import play.data.*;
 import static play.data.Form.*;
 import play.mvc.*;
